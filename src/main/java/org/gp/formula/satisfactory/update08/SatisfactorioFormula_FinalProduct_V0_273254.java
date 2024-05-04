@@ -1,4 +1,4 @@
-package org.gp.formula.satisfactory;
+package org.gp.formula.satisfactory.update08;
 
 import org.gp.core.AbsFormulaManager;
 import org.gp.core.Formula;
@@ -6,74 +6,90 @@ import org.gp.core.Formula;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SatisfactorioFormulaV0_273254 extends AbsFormulaManager {
+public class SatisfactorioFormula_FinalProduct_V0_273254 extends AbsFormulaManager {
 
     @Override
     public List<Formula> getFormula() {
         List<Formula> formulaList = new ArrayList<>();
-        formulaList.addAll( gen钚燃料() );
-        formulaList.addAll( gen铀燃料() );
+        formulaList.addAll( gen核子团() );
+        formulaList.addAll( gen重型模块化框架() );
         formulaList.addAll( gen铝() );
         formulaList.addAll( genMiddle() );
         formulaList.addAll( genLow() );
         return formulaList;
     }
 
-    private static List<Formula> gen钚燃料(){
+    private static List<Formula> gen核子团(){
         List<Formula> formulaList = new ArrayList<>();
         formulaList.add(G(
-                G(1,"钚燃料棒"),
+                G(1,"核子团"),
                 0,
-                G(30,"钚核芯"),
-                G(18,"钢梁"),
-                G(6,"电磁控制杆"),
-                G(10,"散热器")
+                G(1,"压力转换立方体"),
+                G(200,"铜粉")
+        ));
+
+        formulaList.add(G(
+                G(1,"压力转换立方体"),
+                0,
+                G(1,"熔合模块化框架"),
+                G(2,"无线电控制单元")
         ));
         formulaList.add(G(
-                G(1,"钚核芯"),
+                G(1,"熔合模块化框架"),
                 0,
-                G(2,"钚丸"),
-                G(4,"混凝土")
-        ));
-        formulaList.add(G(
-                G(30,"钚丸"),
-                0,
-                G(25,"铀"),
-                G(50,"铀废料"),
-                G(15,"硝酸"),
-                G(25,"硫酸")
+                G(1,"重型模块化框架"),
+                G(50,"铝制外壳"),
+                G(25,"氮气")
         ));
 
         return formulaList;
     }
 
-    private static List<Formula> gen铀燃料(){
+    private static List<Formula> gen无线电控制单元() {
         List<Formula> formulaList = new ArrayList<>();
+
         formulaList.add(G(
-                G(50,"铀废料"),
+                G(1,"无线电控制单元"),
                 0,
-                G(1,"铀燃料棒")
+                G(4,"散热器"),
+                G(2,"高速连接器"),
+                G(12,"石英晶体")
         ));
         formulaList.add(G(
-                G(1,"铀燃料棒"),
+                G(1,"高速连接器"),
                 0,
-                G(50,"铀核芯"),
-                G(3,"钢筋混凝土梁"),
-                G(5,"电磁控制杆")
+                G(56,"快速线"),
+                G(10,"电缆"),
+                G(1,"电路板")
+        ));
+
+        return formulaList;
+    }
+
+    private static List<Formula> gen重型模块化框架() {
+        List<Formula> formulaList = new ArrayList<>();
+
+        formulaList.add(G(
+                G(3,"重型模块化框架"),
+                0,
+                G(8,"模块化框架"),
+                G(10,"钢筋混凝土梁"),
+                G(36,"钢管"),
+                G(22,"混凝土")
         ));
         formulaList.add(G(
-                G(5,"铀核芯"),
+                G(2,"模块化框架"),
                 0,
-                G(10,"铀"),
-                G(3,"混凝土"),
-                G(6,"硫酸")
+                G(3,"加强铁板"),
+                G(12,"铁棒")
         ));
         formulaList.add(G(
-                G(2,"电磁控制杆"),
+                G(3,"加强铁板"),
                 0,
-                G(3,"定子"),
-                G(2,"AI限制器")
+                G(18,"铁板"),
+                G(50,"螺丝")
         ));
+
         return formulaList;
     }
 
@@ -114,6 +130,12 @@ public class SatisfactorioFormulaV0_273254 extends AbsFormulaManager {
         List<Formula> formulaList = new ArrayList<>();
 
         formulaList.add(G(
+                G(2,"电磁控制杆"),
+                0,
+                G(3,"定子"),
+                G(2,"AI限制器")
+        ));
+        formulaList.add(G(
                 G(1,"定子"),
                 0,
                 G(3,"钢管"),
@@ -151,17 +173,24 @@ public class SatisfactorioFormulaV0_273254 extends AbsFormulaManager {
     private static List<Formula> genLow(){
         List<Formula> formulaList = new ArrayList<>();
 
-        formulaList.add(G( G(1,"铜板"), 0,   G(2,"铜锭") ));
+        formulaList.add(G( G(1,"铜板"), 0,  G(2,"铜锭") ));
+        formulaList.add(G( G(5,"铜粉"), 0,  G(30,"铜锭")));
+
         formulaList.add(G( G(5,"快速线"), 0, G(1,"钦锭") ));
 
         formulaList.add(G( G(1,"钢梁"), 0,   G(4,"钢锭") ));
         formulaList.add(G( G(2,"钢管"), 0,   G(3,"钢锭") ));
-        formulaList.add(G( G(3,"钢锭"), 0,   G(2,"铁锭"),G(2,"煤") ));
-        formulaList.add(G( G(2,"铁板"), 0,   G(3,"铁锭") ));
 
+        formulaList.add(G( G(1,"铁棒"), 0,   G(1,"铁锭") ));
+        formulaList.add(G( G(20,"螺丝"), 0,   G(5,"铁锭") ));
         formulaList.add(G( G(9,"电线"), 0,   G(5,"铁锭") ));
+        formulaList.add(G( G(2,"铁板"), 0,   G(3,"铁锭") ));
+        formulaList.add(G( G(3,"钢锭"), 0,   G(2,"铁锭"),G(2,"煤") ));
 
-        formulaList.add(G( G(4,"混凝土"), 0, G(6,"石灰石"),G(5,"水") ));
+        formulaList.add(G( G(1,"混凝土"), 0, G(3,"石灰石") ));
+
+        formulaList.add(G( G(3,"石英晶体"), 0, G(5,"原石英") ));
+
 
         return formulaList;
     }

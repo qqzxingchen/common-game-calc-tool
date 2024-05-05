@@ -25,9 +25,12 @@ public class SatisfactorioFormulaService {
     private static void printFinalProductCost(){
         calc(   new SatisfactorioFormula_FinalProduct_V0_273254(),
                 new HashMap<String, Double>(){{
+                    put("组装编导系统",4.0);
+                    put("磁场发生器",4.0);
+                    put("热推进火箭",1.0);
                     put("核子团",1.0);
                 }}
-
+//                ,"镀铝板","铝制外壳","电池"
         );
     }
 

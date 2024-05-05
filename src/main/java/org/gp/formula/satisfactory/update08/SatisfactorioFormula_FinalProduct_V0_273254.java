@@ -12,10 +12,42 @@ public class SatisfactorioFormula_FinalProduct_V0_273254 extends AbsFormulaManag
     public List<Formula> getFormula() {
         List<Formula> formulaList = new ArrayList<>();
         formulaList.addAll( gen核子团() );
+        formulaList.addAll( gen热推进火箭() );
+        formulaList.addAll( gen磁场发生器() );
+        formulaList.addAll( gen组装编导系统() );
+
         formulaList.addAll( gen重型模块化框架() );
+        formulaList.addAll( gen无线电控制单元() );
+        formulaList.addAll( gen计算机() );
+        formulaList.addAll( gen电机() );
         formulaList.addAll( gen铝() );
         formulaList.addAll( genMiddle() );
         formulaList.addAll( genLow() );
+        return formulaList;
+    }
+
+    private static List<Formula> gen组装编导系统(){
+        List<Formula> formulaList = new ArrayList<>();
+        formulaList.add(G(
+                G(1,"组装编导系统"),
+                0,
+                G(2,"自适应控制单元"),
+                G(1,"超级计算机")
+        ));
+        formulaList.add(G(
+                G(2,"自适应控制单元"),
+                0,
+                G(15,"自动线路"),
+                G(10,"电路板"),
+                G(2,"重型模块化框架"),
+                G(2,"计算机")
+        ));
+        formulaList.add(G(
+                G(1,"自动线路"),
+                0,
+                G(1,"定子"),
+                G(20,"电缆")
+        ));
         return formulaList;
     }
 
@@ -42,6 +74,119 @@ public class SatisfactorioFormula_FinalProduct_V0_273254 extends AbsFormulaManag
                 G(25,"氮气")
         ));
 
+        return formulaList;
+    }
+
+
+    private static List<Formula> gen磁场发生器(){
+        List<Formula> formulaList = new ArrayList<>();
+        formulaList.add(G(
+                G(2,"磁场发生器"),
+                0,
+                G(5,"多功能框架"),
+                G(2,"电磁控制杆"),
+                G(10,"电池")
+        ));
+
+        formulaList.add(G(
+                G(2,"多功能框架"),
+                0,
+                G(1,"模块化框架"),
+                G(12,"钢梁")
+        ));
+
+        return formulaList;
+    }
+
+    private static List<Formula> gen热推进火箭(){
+        List<Formula> formulaList = new ArrayList<>();
+        formulaList.add(G(
+                G(2,"热推进火箭"),
+                0,
+                G(5,"模块化引擎"),
+                G(2,"涡轮电机"),
+                G(6,"冷却系统"),
+                G(2,"熔合模块化框架")
+        ));
+
+        formulaList.add(G(
+                G(1,"模块化引擎"),
+                0,
+                G(2,"电机"),
+                G(15,"橡胶"),
+                G(2,"智能护板")
+        ));
+        formulaList.add(G(
+                G(1,"智能护板"),
+                0,
+                G(1,"加强铁板"),
+                G(1,"转子")
+        ));
+        formulaList.add(G(
+                G(1,"涡轮电机"),
+                0,
+                G(4,"冷却系统"),
+                G(2,"无线电控制单元"),
+                G(4,"电机"),
+                G(24,"橡胶")
+        ));
+        formulaList.add(G(
+                G(1,"冷却系统"),
+                0,
+                G(2,"散热器"),
+                G(2,"橡胶"),
+                G(5,"水"),
+                G(25,"氮气")
+        ));
+        return formulaList;
+    }
+
+    private static List<Formula> gen电机(){
+        List<Formula> formulaList = new ArrayList<>();
+
+        formulaList.add(G(
+                G(1,"电机"),
+                0,
+                G(2,"定子"),
+                G(2,"转子")
+        ));
+        formulaList.add(G(
+                G(1,"定子"),
+                0,
+                G(3,"钢管"),
+                G(8,"电线")
+        ));
+        formulaList.add(G(
+                G(1,"转子"),
+                0,
+                G(5,"铁棒"),
+                G(25,"螺丝")
+        ));
+        return formulaList;
+    }
+
+    private static List<Formula> gen计算机(){
+        List<Formula> formulaList = new ArrayList<>();
+
+        formulaList.add(G(
+                G(1,"超级计算机"),
+                0,
+                G(3,"无线电控制单元"),
+                G(3,"冷却系统")
+        ));
+        formulaList.add(G(
+                G(3,"计算机"),
+                0,
+                G(8,"电路板"),
+                G(3,"晶体振荡器")
+        ));
+        formulaList.add(G(
+                G(2,"晶体振荡器"),
+                0,
+                G(36,"石英晶体"),
+                G(28,"电缆"),
+                G(5,"加强铁板")
+        ));
         return formulaList;
     }
 
@@ -111,6 +256,12 @@ public class SatisfactorioFormula_FinalProduct_V0_273254 extends AbsFormulaManag
                 G(1,"铜锭")
         ));
         formulaList.add(G(
+                G(15,"铝制外壳"),
+                0,
+                G(20,"铝锭"),
+                G(10,"铜锭")
+        ));
+        formulaList.add(G(
                 G(1,"铝锭"),
                 0,
                 G(2,"铝块")
@@ -135,12 +286,7 @@ public class SatisfactorioFormula_FinalProduct_V0_273254 extends AbsFormulaManag
                 G(3,"定子"),
                 G(2,"AI限制器")
         ));
-        formulaList.add(G(
-                G(1,"定子"),
-                0,
-                G(3,"钢管"),
-                G(8,"电线")
-        ));
+
         formulaList.add(G(
                 G(1,"AI限制器"),
                 0,
@@ -176,7 +322,10 @@ public class SatisfactorioFormula_FinalProduct_V0_273254 extends AbsFormulaManag
         formulaList.add(G( G(1,"铜板"), 0,  G(2,"铜锭") ));
         formulaList.add(G( G(5,"铜粉"), 0,  G(30,"铜锭")));
 
+        formulaList.add(G( G(1,"钦锭"), 0, G(3,"钦矿石") ));
         formulaList.add(G( G(5,"快速线"), 0, G(1,"钦锭") ));
+
+        formulaList.add(G( G(1,"电缆"), 0,   G(2,"电线") ));
 
         formulaList.add(G( G(1,"钢梁"), 0,   G(4,"钢锭") ));
         formulaList.add(G( G(2,"钢管"), 0,   G(3,"钢锭") ));
@@ -186,6 +335,7 @@ public class SatisfactorioFormula_FinalProduct_V0_273254 extends AbsFormulaManag
         formulaList.add(G( G(9,"电线"), 0,   G(5,"铁锭") ));
         formulaList.add(G( G(2,"铁板"), 0,   G(3,"铁锭") ));
         formulaList.add(G( G(3,"钢锭"), 0,   G(2,"铁锭"),G(2,"煤") ));
+
 
         formulaList.add(G( G(1,"混凝土"), 0, G(3,"石灰石") ));
 

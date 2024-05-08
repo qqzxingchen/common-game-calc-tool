@@ -322,7 +322,7 @@ public class SatisfactorioFormula_FinalProduct_V0_273254 extends AbsFormulaManag
         formulaList.add(G( G(1,"铜板"), 0,  G(2,"铜锭") ));
         formulaList.add(G( G(5,"铜粉"), 0,  G(30,"铜锭")));
 
-        formulaList.add(G( G(1,"钦锭"), 0, G(3,"钦矿石") ));
+        formulaList.add(G( G(1,"钦锭"), 0, G(2,"钦矿石"),G(2,"水") ));
         formulaList.add(G( G(5,"快速线"), 0, G(1,"钦锭") ));
 
         formulaList.add(G( G(1,"电缆"), 0,   G(2,"电线") ));

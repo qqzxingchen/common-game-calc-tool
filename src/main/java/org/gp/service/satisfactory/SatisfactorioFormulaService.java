@@ -30,7 +30,7 @@ public class SatisfactorioFormulaService {
                     put("热推进火箭",1.0);
                     put("核子团",1.0);
                 }}
-//                ,"镀铝板","铝制外壳","电池"
+                ,"镀铝板","铝制外壳","电池","铜粉"
         );
     }
 
